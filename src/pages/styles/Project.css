@@ -1,0 +1,132 @@
+.proj-bg {
+    background-image: url("/public/assets/proj-bg.png"); /* remove /public */
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 110%;
+    width: 110%;
+    z-index: 0;
+    will-change: transform;
+    transition: transform 0.1s ease-out;
+    background-repeat: no-repeat;
+  }
+  
+.proj-page {
+    position: relative;
+    height: 100vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 0 5%;
+  }
+  
+
+.desc{
+    font-size: 2rem;
+    text-align: center;
+    margin: 0%;
+    padding: 0%;
+}
+
+.proj-carousel {
+    width: 100%;
+    margin: 1% auto;
+    padding-top: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    
+  }
+  
+  .proj-wrapper {
+    overflow: hidden;
+    width: 100%;
+    
+    
+  }
+  
+  .proj-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    gap:3%;
+   
+  }
+  
+  .proj-card {
+    flex: 0 0 60%;
+    padding: 0;
+    margin: 30px 20% 50px 20%;
+    background: #2d2d2d76;
+    text-align: center;
+    border-radius: 70px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 15px 15px 30px black;
+  }
+  
+  .nav-btn {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #444;
+    padding: 0 10px;
+  }
+  
+  .nav-btn:hover {
+    color: #ffee00;
+  }
+  
+  .proj-image{
+    width: 300px;
+    border-radius: 35px;
+    margin: auto 6%;
+    box-shadow: 15px 15px 30px black;
+    border: 2px solid rgba(183, 183, 183, 0.536);
+  }
+
+  .proj-title {
+    text-decoration: none;
+    font-size: 2.5rem;
+    color: #ffd500;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+    position: relative; /* required for ::after to position correctly */
+  }
+  
+  .proj-title::after {
+    content: '';
+    position: absolute;
+    bottom: 50%;
+    left: 0;             /* Start from left */
+    width: 0;
+    height: 3px;
+    background-color: red;
+    transition: width 0.4s ease;
+  }
+  
+  .proj-title:hover {
+    transform: scale(1.1);
+  }
+  
+  .proj-title:hover::after {
+    width: 100%;        /* Grow to full width */
+  }
+  
+
+.proj-desc{
+    font-size: 1.5rem;
+}
+
+.proj-info{
+    margin: 50px 50px 0 0;
+}

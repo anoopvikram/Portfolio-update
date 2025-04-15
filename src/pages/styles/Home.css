@@ -1,0 +1,90 @@
+/* Home page background and layout */
+.whole{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: url("/public/assets/bg.png"); /* Moved here */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+.home-page {
+  flex: 1; 
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  justify-content: space-between; /* Distribute the space between heading and tech-love */
+  align-items: center; /* Vertically center */
+  overflow-x: hidden;
+  padding: 0 5%; /* Add padding for the sides */
+  margin: 0;
+}
+
+/* Styling for the heading */
+.heading {
+  font-family: "Teko", sans-serif;
+  font-size: 2rem;
+  text-align: right;  
+  display: flex;
+  flex-direction: column; /* Stack vertically */
+  margin: 8% 2% 0 0;
+}
+
+.heading h1 {
+  color: rgba(0, 0, 0, 0.575);
+  font-weight: 800;
+  margin: -5%;
+  padding-bottom: 0%;
+  text-transform: uppercase;
+}
+
+.heading h2 {
+  color: rgb(255, 255, 255);
+  margin: 0;
+  padding-top: 0%;
+  position: relative;
+  left:5%;
+  text-transform: lowercase;
+  font-size: 30px;
+}
+
+/* TechLove component */
+.tech-love {
+  position: relative;
+  right: 50px ;
+  text-align: center;
+  color: #ffffff;
+  font-family: "Teko", sans-serif;
+  width: 40%; /* Limit the width */
+  gap:0;
+}
+
+/* Animation for tech name */
+.tech-love h2 {
+  margin:0%;
+  font-size: 4.5rem;
+  padding-top: 0%;
+  display: inline-block;
+  position: relative;
+  line-height: 1;
+}
+
+.tech-love .tech-name {
+  margin:0%;
+  font-size: 6rem;
+  color: rgba(0, 0, 0, 0.575); /* Change color of technology */
+  font-weight: 1000;
+  line-height: 1;
+}
+
+footer{
+  width: fit-content;
+  color: #ffffff;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.079);
+  border-radius: 18px;
+
+}

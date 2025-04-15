@@ -1,0 +1,37 @@
+/* Basic styles for the navigation bar */
+nav {
+  background-color: rgba(0, 0, 0, 0);   /* Transparent background */
+  position: absolute;              /* Keeps navbar above the content */
+  top: 0;
+  left: -1%;
+  width: 100%;
+  padding: .5rem;
+  z-index: 10;                     /* Keeps navbar on top */
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  color: white;                    /* Text color for visibility */
+  box-shadow: none;              /* Optional: remove any shadow */
+}
+
+  
+  nav a {   
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px ;
+    background-color: #00000026;
+    border-radius: 70px;
+    color: #ffffff; /* Text color */  
+    font-weight:500;
+    transition: all 0.3s ease;
+  }
+  
+  /* Hover effect */
+  nav a:hover {
+    transform: scale(1.2);
+    color: #ffcc00; /* Text color on hover */
+    background-color: #ffffff00;
+  }
+  

@@ -1,0 +1,27 @@
+.grid1-container {
+    position: relative;
+    width: 21%;
+    height: 550px;
+    margin: 4% 5.2%;
+    overflow: hidden;
+    border-radius: 200px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.512);
+  }
+  
+  .base-img,
+  .top-img {
+    position: absolute; 
+    top: 0;
+    left: 0;    
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  
+    transition: clip-path 0.2s ease-out;
+    pointer-events: none;
+  }
+  
+  .top-img {
+    clip-path: inset(0 100% 0 0); /* default: show half */
+    z-index: 2;
+  }
+  
