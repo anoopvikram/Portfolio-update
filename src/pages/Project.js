@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import "./styles/Project.css"; // Include styles separately
+import "./styles/Project.css"; 
 import { Link } from "react-router-dom";
 import useMouseParallax from "../components/useMouseParallax.js";
+import Header from "../components/Header.js";
 
 function Project() {
-    const backgroundStyle = useMouseParallax(0.03); // Slightly slower parallax
+    const backgroundStyle = useMouseParallax(0.03); //  parallax
     const projects = [
         {
           title: "Cinescope.",
@@ -44,6 +45,7 @@ function Project() {
 
   return (
     <div className="proj-page">
+      <Header/>
         <div className="proj-bg" style={backgroundStyle}></div>
         <div className="proj-carousel">
         <button onClick={prevSlide} className="nav-btn">&#10094;</button>

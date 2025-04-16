@@ -2,12 +2,14 @@ import React from "react";
 import "./styles/Intro.css";
 import IntroImage from "../components/IntroImage";
 import useMouseParallax from "../components/useMouseParallax.js";
+import Header from "../components/Header.js"
 
 function Intro() {
   const backgroundStyle = useMouseParallax(0.07); 
 
   return (
     <div className="intro-page">
+      <Header/>
       <div className="background" style={backgroundStyle}></div> {/* Background container */}
       <div className="whole-grid">
         <div className="grid0-container">
@@ -17,7 +19,7 @@ function Intro() {
           Scroll through and check out how I bring interfaces to life!
           </p>
         </div>
-        <IntroImage />
+        <IntroImage className="intro-image"/>
         <div className="grid2-container">
           <div className="intro-card">
             <img src="/assets/icons/frontend.png" alt="Front-End Design" className="card-icon" />

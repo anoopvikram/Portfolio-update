@@ -23,7 +23,8 @@
   }
   .whole-grid {
     display: flex;
-    margin-top: 3%;
+    width: 100%;
+    max-width: 100vw;
   }
   
   .grid0-container {
@@ -75,5 +76,38 @@
     margin: 3% auto;
     display: block;
     filter: saturate(0%);
+  }
+  
+  @media (max-width: 768px) {
+    .grid0-container p {
+      display: none;
+    }
+  
+    .grid0-container h2 {
+      display: block;               /* 👈 makes sure it's a block element */
+      font-size: 2rem;
+      margin: -30% 0 0 -25%;               /* center it horizontally */
+      white-space: nowrap;          /* prevent wrapping */
+    }
+  
+    .whole-grid {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;      /* vertically center */
+      text-align: center;
+      min-height: 100vh;
+      padding: 0;
+      margin: 0;
+    }
+  
+    .intro-card {
+      display: block;               /* 👈 useful if you're changing layout */
+      font-size: 0.9rem;
+      padding: 25px 10px;
+      margin-bottom: 30px;
+      width: 90%;
+      max-width: 350px;
+    }
   }
   
