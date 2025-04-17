@@ -1,53 +1,59 @@
-.intro-page {
-    position: relative;
-    height: 100vh;
-    overflow-x: hidden;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
+
   .background {
     position: fixed;
     top: 0;
     left: 0;
-    width: 110%;
-    height: 110%;
+    width: 100%;
+    height: 100%;
     background-image: url("/public/assets/intro-bg.png");
-    background-size: 100%; /* Increased zoom level */
+    background-size: 110%; /* Increased zoom level */
     background-position: center;
     background-attachment: fixed;
     z-index: -1; /* Ensure the background stays behind content */
     transition: transform 0.1s ease-out; /* Smooth transition for the parallax effect */
   }
-  .whole-grid {
-    display: flex;
-    width: 100%;
-    max-width: 100vw;
+
+
+  .whole-grid{
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    grid-template-rows: auto auto auto;
+    place-items: center;
+    margin-top: 3%;
   }
-  
-  .grid0-container {
-    width: 30%;
-    font-size: 1.8rem;
-    margin-left: 3%;
+
+  .grid0-container{
+    grid-column: 1/2;
+    grid-row: 1/2;
+    align-self:center;
     text-align: center;
-    margin-top: 10%;
+
+    color: white;
+    font-size: 1.7rem;
+    max-width: 80%;
+  } 
+
+  .grid0-container p{
+    color: rgb(191, 191, 191);
   }
-  
-  .grid0-container h2 {
-    color: #ffe374;
+
+  .grid1-container{
+    grid-column: 2/3;
+    grid-row: 1/2;
+    justify-content: center;
+    width: 100%;
   }
-  
+
   .grid2-container {
+    grid-column: 3/4;
+    grid-row: 1/2;
+    justify-content: center;
+
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 220px);
     grid-template-rows: repeat(2, 45%);
     gap: 20px;
-    justify-content: end;
-    margin-right: 5%;
-    margin-top: 2%;
-    margin-bottom: 2%;
   }
   
   .intro-card {
@@ -59,6 +65,7 @@
     border-radius: 25px;
     text-align: center;
     box-shadow: 15px 15px 30px black;
+    color: white;
   }
   
   .intro-card h2 {
@@ -84,10 +91,13 @@
     }
   
     .grid0-container h2 {
-      display: block;               /* 👈 makes sure it's a block element */
-      font-size: 2rem;
-      margin: -30% 0 0 -25%;               /* center it horizontally */
-      white-space: nowrap;          /* prevent wrapping */
+      display: flex;
+      font-size: 2rem;             
+      justify-self: center;
+    }
+
+    .grid1-container{
+      display: none;
     }
   
     .whole-grid {
@@ -98,7 +108,7 @@
       text-align: center;
       min-height: 100vh;
       padding: 0;
-      margin: 0;
+      margin-bottom: 30%;
     }
   
     .intro-card {
@@ -106,8 +116,21 @@
       font-size: 0.9rem;
       padding: 25px 10px;
       margin-bottom: 30px;
-      width: 90%;
-      max-width: 350px;
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+
+  @media(max-width:482px){
+    .grid2-container{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
   }
   
+  @media (max-width:949px){
+    .grid1-container{
+      display: none;
+    }
+  }

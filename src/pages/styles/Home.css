@@ -1,70 +1,74 @@
 /* Home page background and layout */
-.whole{
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background-image: url("/public/assets/bg.png"); /* Moved here */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+.home-bg {
+  background-image: url("/public/assets/bg.png");
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+  pointer-events: none;
+}
 
+.whole{
+  height: 100%;
+  width: 100%;
 }
 
 .home-page {
-  flex: 1; 
-  background-size: cover;
-  background-position: center;
-  color: white;
-  display: flex;
-  justify-content: space-between; /* Distribute the space between heading and tech-love */
-  align-items: center; /* Vertically center */
-  overflow-x: hidden;
-  padding: 0 5%; /* Add padding for the sides */
-  margin: 0;
+  margin-top:15%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  place-items: center;
+}
+
+.tech{
+  grid-column: 1/2;
+  grid-row: 1/2;
+  text-align: center;
+  color: #ffffff;
+  font-family: "Teko", sans-serif;
+  gap: 0;
+  margin-right: 15%;
 }
 
 /* Styling for the heading */
 .heading {
+  grid-column: 2/3;
+  grid-row: 1/2;
   font-family: "Teko", sans-serif;
-  font-size: 2rem;
-  text-align: right;  
-  display: flex;
-  flex-direction: column; /* Stack vertically */
-  margin: 8% 2% 0 0;
+  text-align: center;
+  margin-left: 15%;
 }
+
+
 
 .heading h1 {
   color: rgba(0, 0, 0, 0.575);
   font-weight: 800;
-  margin: -5%;
-  padding-bottom: 0%;
+  margin: 0;
+  padding: 0;
   text-transform: uppercase;
+  font-size: clamp(2rem, 6vw, 4rem);
 }
 
 .heading h2 {
   color: rgb(255, 255, 255);
+  position: relative;
   margin: 0;
-  padding-top: 0%;
-  position: relative;
-  left:5%;
+  padding: 0;
   text-transform: lowercase;
-  font-size: 30px;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
 }
 
-/* TechLove component */
-.tech-love {
-  position: relative;
-  right: 50px ;
-  text-align: center;
-  color: #ffffff;
-  font-family: "Teko", sans-serif;
-  width: 40%; /* Limit the width */
-  gap:0;
-}
 
-/* Animation for tech name */
+
 .tech-love h2 {
-  margin:0%;
+  margin: 0%;
   font-size: 4.5rem;
   padding-top: 0%;
   display: inline-block;
@@ -73,67 +77,115 @@
 }
 
 .tech-love .tech-name {
-  margin:0%;
+  margin: 0%;
   font-size: 6rem;
-  color: rgba(0, 0, 0, 0.575); /* Change color of technology */
+  color: rgba(0, 0, 0, 0.575);
   font-weight: 1000;
   line-height: 1;
 }
 
-footer{
-  width: fit-content;
-  color: #ffffff;
-  text-align: center;
-  background-color: rgba(0, 0, 0, 0.079);
-  border-radius: 18px;
-
+.mobile-note{
+  display: none;
+}
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-@media (max-width: 768px) {
-  .whole{
-    min-height: 100vh;
-    background-image: url("/public/assets/phone-bg.jpg");
-  }
+.animated-note {
+  animation: fadeSlideUp 1.2s ease-out forwards;
+}
 
-  .tech-love{
-    display: none;
-    /* margin: 20% 25% 0 0; */
-
-  }
-
-  /* .tech-love .tech-name{
-    font-size: 3rem;
-    padding: 0%;
-  }
-  .tech-love h2{
-    padding: 0%;
-    font-size: 2.5rem;
-  } */
+@media(max-width:1350px){
 
   .home-page{
-    display: flex;
-    flex-direction: row;
+    margin-top: 25%;
   }
-
   .heading{
-    display: block;
-    margin: 35% 25% 0 0;
-    text-align: left;
+    justify-self: end;
   }
-  .heading h1{
-    font-size: 3.2rem;
-    text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.518);
+  .tech{
+    justify-self: start;
   }
-  .heading h2{
-    color: #ededed;
-    font-size: 2rem;
-    margin: -8% 35% 0 -10%;
-    text-align: left;
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.518);
-    
+  Footer{display: none;}
+}
+
+@media (max-width:1177px){
+  .tech{
+    display: none;
   }
-  footer{
+  .home-page{
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+  }
+  .heading{
+    justify-self: center;
+    margin: 0 0 2% 0;
+    position: absolute;
+    bottom: 0;
+  }
+}
+
+@media (max-width:768px){
+  .home-bg {
+    background-image: url("/public/assets/phone-bg.jpg");
+  }
+  .heading{
     display: none;
   }
 
+  .mobile-note {
+    display: flex ;   
+    color: #333143;
+    font-family: "Teko", sans-serif;
+    font-size: 1.8rem;
+    text-align: left;
+    width: 50%;
+    font-weight: 900;
+    margin: 0 0 20% 5%;
+    text-align: center;
+    /* background-color: #222222;
+    border: 2px solid rgb(52, 52, 52);
+    border-radius: 20px;
+    box-shadow: 15px 15px 25px black; */
+  }
+
+  .span-text{
+    font-size: 2rem;
+  }
+
+  .phone-text {
+    text-transform: uppercase;
+    color: white;
+    text-shadow: 5px 5px 15px black;
+  }
+  .desktop-text{
+    text-transform: capitalize;
+    color: rgb(255, 255, 255);
+    text-shadow: 5px 5px 15px black;
+  }
+  
+  .colorful{
+    color: rgb(255, 230, 67);
+    font-size: 2.5rem;
+    text-shadow: 5px 5px 15px black;
+  }
+
+  .half{
+    color: white;
+    font-size: 1.7rem;
+    text-shadow: 5px 5px 15px black;
+  }
+  .maybe{
+    color: rgb(255, 230, 67);
+    font-size: 3.3rem;
+    text-shadow: 5px 5px 15px black;
+  }
 }

@@ -17,22 +17,22 @@ function IntroImage() {
 
   const resetClip = () => {
     if (imgRef.current) {
-      imgRef.current.style.clipPath = `inset(0 100% 0 0)`; // reset to half
+      imgRef.current.style.clipPath = `inset(0 0 0 0)`; // reset to half
     }
   };
 
   return (
     <div
-      className="grid1-container"
+      className="image-container"
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={resetClip}
     >
-      <img className="base-img" src="/assets/artist.png" alt="artist" />
+      <img className="base-img" src="/assets/coder.png" alt="sea" />
       <img
         ref={imgRef}
         className="top-img"
-        src="/assets/coder.png"
+        src="/assets/artist.png"
         alt="mountain"
       />
     </div>
