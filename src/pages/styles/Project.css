@@ -1,11 +1,11 @@
 
 .proj-bg {
+    background-image: url("/public/assets/proj-bg.png");
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("/public/assets/proj-bg.png");
     background-size: 110%; /* Increased zoom level */
     background-position: center;
     background-attachment: fixed;

@@ -9,12 +9,14 @@ function Carousel() {
       title: "Cinescope.",
       description: "A modern IMDB-style movie site where you can explore film details, ratings, and posters.",
       image: "/assets/movie.png",
+      link: "https://cine-scope-plum.vercel.app/"
     },
     {
       id: 2,
       title: "Cafe Website.",
       description: "A cozy and modern cafe website showcasing the menu and ambience.",
       image: "/assets/cafe.png",
+      link:"https://anoopvikram.github.io/cafe-update/"
     },
     {
       id: 3,
@@ -59,9 +61,15 @@ function Carousel() {
                 <div className="inside-card">
                     <img src={project.image} alt={project.title} className="proj-image" />
                     <div className="proj-info">
-                        <Link to={`/projects/${project.id}`} className="proj-title">
-                            {project.title}
-                        </Link>
+                    {project.link ? (
+                      <a href={project.link} target="_blank" rel="noopener noreferrer" className="proj-title">
+                        {project.title}
+                      </a>
+                    ) : (
+                      <Link to={`/projects/${project.id}`} className="proj-title">
+                        {project.title}
+                      </Link>
+                    )}
                         <p className="proj-desc">{project.description}</p>
                     </div>
                 </div>
