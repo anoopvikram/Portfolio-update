@@ -5,6 +5,7 @@ import Project from "./pages/Project"
 import Contact from "./pages/Contact"
 import Loading from './components/Loading';
 import { useEffect,useState } from 'react';
+import Blender from './pages/Blender';
 
 function App() {
 
@@ -79,6 +80,7 @@ return (
           <Route path="/intro" element={<Intro/>}></Route>
           <Route path="/project" element={<Project/>}></Route>
           <Route path="/contact" element={<Contact/>}></Route>
+          <Route path="/design" element={<Blender/>}></Route>
         </Routes>
         </Router>
       )}

@@ -11,7 +11,9 @@ function Header(){
                         <Link to= "/">Home</Link>
                         <Link to= "/intro">Intro</Link>
                         <Link to= "/project">Project</Link>
+                        <Link to= "/design">3d Art</Link>
                         <Link to= "/contact">Contact</Link>
+                        
                     </nav>
                 </header>
             </div>
@@ -21,7 +23,9 @@ function Header(){
                         <Link to= "/">Home</Link>
                         <Link to= "/intro">Intro</Link>
                         <Link to= "/project">Project</Link>
+                        <Link to= "/design">3d Art</Link>
                         <Link to= "/contact">Contact</Link>
+                        
                     </nav>
                 </header>
             </div>
